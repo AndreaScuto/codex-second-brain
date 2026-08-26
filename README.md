@@ -38,6 +38,12 @@ $CODEX_HOME/skills/second-brain-maintain/
 
 Each directory must contain its `SKILL.md` directly.
 
+## Plugin package
+
+This repository is also packaged as a skills-only plugin for ChatGPT and Codex through `.codex-plugin/plugin.json`. It does not require an MCP server or external service.
+
+Public directory publication requires submission and review through the OpenAI Platform plugin portal. The publisher must provide a verified developer identity, support and policy URLs, listing metadata, and test cases.
+
 ## Use
 
 Ask Codex to use `second-brain-init` once when adding the knowledge layer to a repository. It inspects existing instructions, documentation, repository state, relevant code, and GitNexus flows when available before writing the smallest useful `.brain`.

@@ -1,0 +1,37 @@
+{
+  "name": "codex-second-brain",
+  "version": "0.1.0",
+  "description": "Build and maintain durable repository knowledge from code and Markdown, with optional GitNexus enrichment.",
+  "author": {
+    "name": "AndreaScuto",
+    "url": "https://github.com/AndreaScuto"
+  },
+  "homepage": "https://github.com/AndreaScuto/codex-second-brain",
+  "repository": "https://github.com/AndreaScuto/codex-second-brain",
+  "license": "Apache-2.0",
+  "keywords": [
+    "codex",
+    "second-brain",
+    "repository-knowledge",
+    "markdown",
+    "obsidian"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Second Brain",
+    "shortDescription": "Build durable repository knowledge from code and Markdown.",
+    "longDescription": "Initialize and maintain a compact repository second brain from source code, documentation, roadmaps, and Obsidian notes. GitNexus is optional.",
+    "developerName": "AndreaScuto",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/AndreaScuto/codex-second-brain",
+    "defaultPrompt": [
+      "Initialize a second brain for this repository.",
+      "Sync docs/roadmap.md into the second brain.",
+      "Update durable project knowledge after this change."
+    ]
+  }
+}

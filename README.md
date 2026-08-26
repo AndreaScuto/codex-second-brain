@@ -20,29 +20,50 @@ Optional: an indexed GitNexus repository and its MCP tools.
 
 ## Install
 
-Clone or download this repository, then copy both directories under `skills/`.
+### Public plugin directory
 
-For one project:
+After the plugin is approved and published, open **Plugins** in the ChatGPT desktop app, search for **Codex Second Brain**, select the plus button, and start a new chat after installation.
+
+In Codex CLI:
+
+```text
+codex
+/plugins
+```
+
+Search for **Codex Second Brain**, install it, then start a new Codex session. The IDE extension does not support plugins; use the standalone skill installation below instead.
+
+### Install now from GitHub
+
+The simplest local installation is through Codex's built-in skill installer:
+
+```text
+$skill-installer Install second-brain-init and second-brain-maintain from https://github.com/AndreaScuto/codex-second-brain/tree/master/skills
+```
+
+Alternatively, clone or download this repository and copy both directories under `skills/` into one of Codex's skill locations.
+
+For every repository you use:
+
+```text
+$HOME/.agents/skills/second-brain-init/
+$HOME/.agents/skills/second-brain-maintain/
+```
+
+For one repository only:
 
 ```text
 <project>/.agents/skills/second-brain-init/
 <project>/.agents/skills/second-brain-maintain/
 ```
 
-For personal Codex use:
-
-```text
-$CODEX_HOME/skills/second-brain-init/
-$CODEX_HOME/skills/second-brain-maintain/
-```
-
-Each directory must contain its `SKILL.md` directly.
+Each directory must contain its `SKILL.md` directly. Codex normally detects new skills automatically; restart Codex if they do not appear.
 
 ## Plugin package
 
 This repository is also packaged as a skills-only plugin for ChatGPT and Codex through `.codex-plugin/plugin.json`. It does not require an MCP server or external service.
 
-Public directory publication requires submission and review through the OpenAI Platform plugin portal. The publisher must provide a verified developer identity, support and policy URLs, listing metadata, and test cases.
+Public directory publication requires submission and review through the OpenAI Platform plugin portal. Until approval, use the GitHub installation above. The publisher must provide a verified developer identity, support and policy URLs, listing metadata, and test cases.
 
 ## Use
 

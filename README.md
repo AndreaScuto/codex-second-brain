@@ -1,21 +1,22 @@
 # Codex Second Brain
 
-Two dependency-free Codex skills for keeping small, durable repository knowledge alongside a GitNexus code graph.
+Two dependency-free Codex skills for keeping small, durable repository knowledge. GitNexus is an optional accelerator, not a requirement.
 
-- `second-brain-init` inspects a repository and creates a progressively retrieved `.brain` plus compact routing in `AGENTS.md`.
-- `second-brain-maintain` updates that knowledge after significant changes and makes no edit when the source or graph already tells the full story.
+- `second-brain-init` inspects a repository directly and creates a progressively retrieved `.brain` plus compact routing in `AGENTS.md`.
+- `second-brain-maintain` updates that knowledge after significant changes or synchronizes selected Markdown and Obsidian documents.
 
 ## Division of responsibility
 
-`.brain` stores architectural intent, domain invariants, decision rationale, non-obvious constraints, active migrations or accepted debt, and repeatable development workflows.
+`.brain` stores architectural intent, domain invariants, decision rationale, non-obvious constraints, active roadmap state, migrations or accepted debt, and repeatable development workflows.
 
-GitNexus remains the source of truth for files, symbols, dependencies, callers, execution flows, and blast radius. The skills reject changelogs, task notes, file maps, source summaries, and boilerplate.
+Source code and source documents remain the source of truth. When GitNexus is available, the skills use it for files, symbols, dependencies, callers, execution flows, and blast radius; otherwise they inspect the repository with Codex's normal search and file tools. The brain still rejects changelogs, transient task notes, file maps, source summaries, and boilerplate.
 
 ## Requirements
 
 - Codex with repository skills enabled.
-- An indexed GitNexus repository and its MCP tools available to Codex.
 - An existing `AGENTS.md`, or permission for the initialization skill to create one.
+
+Optional: an indexed GitNexus repository and its MCP tools.
 
 ## Install
 
@@ -39,14 +40,19 @@ Each directory must contain its `SKILL.md` directly.
 
 ## Use
 
-Ask Codex to use `second-brain-init` once when adding the knowledge layer to a repository. It will inspect existing instructions, documentation, repository state, and relevant GitNexus flows before writing the smallest useful `.brain`.
+Ask Codex to use `second-brain-init` once when adding the knowledge layer to a repository. It inspects existing instructions, documentation, repository state, relevant code, and GitNexus flows when available before writing the smallest useful `.brain`.
 
-Use `second-brain-maintain` after a significant architectural, domain, migration, debt, or development-workflow change. It edits only the relevant page, replaces stale knowledge instead of appending history, and leaves `.brain` untouched for ordinary code changes.
+Use `second-brain-maintain` after a significant architectural, domain, migration, debt, or development-workflow change. You can also give it one or more Markdown files, including notes from an Obsidian vault, to synchronize durable instructions and current roadmap state. It edits only the relevant page, replaces stale imported knowledge instead of appending duplicates, and leaves `.brain` untouched for ordinary code changes.
+
+```text
+Use second-brain-init for this repository. GitNexus is not available.
+Use second-brain-maintain to sync docs/roadmap.md into .brain.
+```
 
 The intended session flow is:
 
 ```text
-task -> relevant .brain page -> GitNexus -> minimum code -> impact -> change + tests -> durable knowledge update, if needed
+task -> relevant .brain page -> optional GitNexus or repository search -> minimum code -> impact -> change + tests -> durable knowledge update, if needed
 ```
 
 ## License
